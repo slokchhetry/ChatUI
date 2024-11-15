@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-gray-100 min-h-screen;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full hover:bg-gray-600 transition-colors;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 #121212;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-secondary hover:bg-secondary-darker text-white;
+  }
+  
+  .input {
+    @apply bg-dark-lighter border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:border-secondary;
+  }
+
+  /* Custom scrollbar container class */
+  .custom-scrollbar {
+    @apply overflow-y-auto;
+    scrollbar-gutter: stable;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
